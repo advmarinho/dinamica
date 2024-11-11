@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fafafa;
+    overflow: hidden; /* Para evitar que balões saiam da tela */
+}
+
+h1 {
+    color: #333;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Letras disponíveis */
+#available-letters {
+    margin-right: 40px;
+    text-align: left;
+}
+
+#available-letters h2 {
+    color: #333;
+}
+
+#available-letters ul {
+    list-style: none;
+    padding: 0;
+}
+
+#available-letters li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Cruzadinha */
+#crossword {
+    display: inline-block;
+}
+
+/* Entrada e histórico de palavras */
+#word-input-history {
+    margin-left: 40px;
+    text-align: left;
+}
+
+#word-input h2,
+#word-history h2 {
+    color: #333;
+}
+
+#word-input input {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#word-input button {
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#word-input #message {
+    color: #33CCCC;
+    margin-top: 10px;
+}
+
+#word-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+#word-history li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Estilo da cruzadinha */
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.cell.empty {
+    background-color: #ccc;
+}
+
+.cell.filled {
+    background-color: #fff;
+}
+
+.cell .letter {
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    display: none;
+}
+
+.cell.revealed .letter {
+    display: block;
+}
+
+.cell.highlighted {
+    background-color: #d4edda;
+}
+
+#hint {
+    font-size: 18px;
+    color: #3b6b6b;
+    margin-top: 20px;
+}
+
+#moral {
+    font-size: 20px;
+    color: #3b6b6b;
+    margin-top: 20px;
+}
+
+/* Efeitos de balões subindo */
+#balloons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 30px;
+    height: 50px;
+    background-color: #FF5733;
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out;
+    z-index: 20;
+}
+
+.balloon:nth-child(odd) {
+    background-color: #FFC300;
+}
+
+.balloon:nth-child(even) {
+    background-color: #DAF7A6;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Efeitos de fogos de artifício */
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    animation: explode 1s ease-in-out infinite;
+}
+
+.firework:nth-child(odd) {
+    background-color: #FFFF00;
+}
+
+.firework:nth-child(even) {
+    background-color: #00FF00;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+#timer-container {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #3b6b6b; /* Vermelho fogo */
+    text-align: center;
+    font-weight: bold; /* Para dar mais impacto */
+    text-shadow: 2px 2px 4px #33cccc; /* Sombra laranja para dar um efeito de fogo */
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruzadinha Interativa - Colaboração</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gente e Gestão: Construindo colaboração e engajamento!</h1>
+    </header>
+
+    <main id="main-container">
+        <!-- Letras disponíveis -->
+        <section id="available-letters">
+            <h2>Letras Disponíveis:</h2>
+            <ul id="letters-list"></ul>
+        </section>
+
+        <!-- Cruzadinha -->
+        <section id="crossword-container">
+            <div id="crossword"></div>
+        </section>
+
+        <!-- Entrada de palavras e histórico -->
+        <section id="word-input-history">
+            <div id="word-input">
+                <h2>Digite a palavra formada:</h2>
+                <input type="text" id="input-word" placeholder="Digite aqui..." />
+                <button id="submit-word">Enviar</button>
+                <p id="message"></p>
+            </div>
+            <div id="word-history">
+                <h2>Histórico de palavras:</h2>
+                <ul id="history-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Timer -->
+    <section id="timer-container">
+        <h3>Tempo Restante!!!</h3>
+        <p id="timer">08:00</p>
+    </section>
+
+    <!-- Áudio de fundo -->
+    <audio id="background-audio" loop>
+        <source src="som.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Mensagens finais -->
+    <footer>
+        <p id="hint" style="display: none;">Parabéns! Gente e Gestão!</p>
+        <p id="moral" style="display: none;">Moral da história: Juntos, colaborando, alcançamos objetivos maiores!</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
